@@ -11,4 +11,6 @@ const bSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("B", bSchema);
+const B = mongoose.model("B", bSchema);
+
+module.exports = B;
