@@ -20,6 +20,15 @@ const index = async (req, res) => {
   res.json(list);
 };
 
+const create = (req, res) => {};
+
+const update = (req, res) => {};
+
+const deleteItem = (req, res) => {};
+
 module.exports = {
   index,
+  create,
+  update,
+  delete: deleteItem,
 };
