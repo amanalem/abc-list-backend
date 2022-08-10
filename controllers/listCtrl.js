@@ -24,12 +24,18 @@ const create = (req, res) => {};
 
 const update = (req, res) => {};
 
-const deleteItem = (req, res) => {
+const deleteItem = async (req, res) => {
   if (req.params.letter.toLowerCase() === "a") {
+    await A.findByIdAndDelete(req.params.id);
+    res.json("aList item deleted");
   }
   if (req.params.letter.toLowerCase() === "b") {
+    await B.findByIdAndDelete(req.params.id);
+    res.json("bList item deleted");
   }
   if (req.params.letter.toLowerCase() === "c") {
+    await C.findByIdAndDelete(req.params.id);
+    res.json("cList item deleted");
   }
 };
 
