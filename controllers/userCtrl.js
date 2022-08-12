@@ -11,7 +11,7 @@ const signup = async (req, res) => {
     // res.json(user);
     const token = createJWT(user);
     res.json({ token });
-  } catch {
+  } catch (err) {
     // Probably a duplicate email
     res.status(400).json(err, { msg: "email already linked to an account" });
   }
