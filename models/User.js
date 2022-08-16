@@ -5,14 +5,16 @@ require("dotenv").config();
 
 const SALT_ROUNDS = 6;
 
+const opts = {
+  timestamps: { currentTime: () => Math.floor(Date.now() / 1000) },
+};
+
 const userSchema = new mongoose.Schema(
   {
-    email: { type: String, require: true, lowercase: true, unique: true },
+    email: { type: String, required: true, lowercase: true, unique: true },
     password: String,
   },
-  {
-    timestamps: true,
-  }
+  opts
 );
 
 userSchema.set("toJSON", {
