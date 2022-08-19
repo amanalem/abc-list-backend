@@ -4,7 +4,11 @@ const aSchema = new mongoose.Schema(
   {
     entry: String,
     isDone: { type: Boolean, default: false },
-    owner: { type: mongoose.Schema.Types.ObjectId, ref: "User", require: true },
+    owner: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
   // {
   //   entry: String,

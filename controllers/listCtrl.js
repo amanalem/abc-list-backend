@@ -2,6 +2,17 @@ const A = require("../models/A");
 const B = require("../models/B");
 const C = require("../models/C");
 
+const cron = require("node-cron");
+
+cron.schedule(
+  " 00 29 15 * * *",
+  () => {
+    console.log("The time is 3:24pm");
+  },
+  false,
+  "America/New_York"
+);
+
 const index = async (req, res) => {
   console.log("index all function hit");
 

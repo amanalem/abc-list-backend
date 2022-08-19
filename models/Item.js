@@ -1,25 +1,22 @@
 const mongoose = require("mongoose");
 
-const cSchema = new mongoose.Schema(
+const itemSchema = new mongoose.Schema(
   {
     entry: String,
     isDone: { type: Boolean, default: false },
+    isOverdue: { type: Boolean, default: false },
+    letter: String,
     owner: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
   },
-  // {
-  //   entry: String,
-  //   isDone: { type: Boolean, default: false },
-  //   owner: String,
-  // },
   {
     timestamps: true,
   }
 );
 
-const C = mongoose.model("C", cSchema);
+const Item = mongoose.model("Item", aSchema);
 
-module.exports = C;
+module.exports = Item;
